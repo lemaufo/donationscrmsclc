@@ -30,7 +30,7 @@ class CampaignController extends Controller
             'name'            => 'required|string|max:255',
             'slug'            => 'required|string|unique:campaigns,slug|max:100',
             'starts_at' => 'required|date',
-'ends_at'   => 'required|date|after:starts_at',
+            'ends_at'   => 'required|date|after:starts_at',
             'goal_amount'     => 'nullable|numeric|min:0',
             'theme_color'     => 'nullable|string|max:7',
             'logo'            => 'nullable|image|max:2048',
@@ -42,6 +42,7 @@ class CampaignController extends Controller
             'name'               => $validated['name'],
             'slug'               => $validated['slug'],
             'starts_at'          => $validated['starts_at'],
+            'event_date' => $validated['starts_at'], // usa starts_at como event_date
             'ends_at'            => $validated['ends_at'],
             'goal_amount'        => $validated['goal_amount'] ?? null,
             'theme_color'        => $validated['theme_color'] ?? '#dc2626',
@@ -79,12 +80,14 @@ class CampaignController extends Controller
             'theme_color'     => 'nullable|string|max:7',
             'logo'            => 'nullable|image|max:2048',
             'banner'          => 'nullable|image|max:2048',
+            'event_date' => 'required|date',
             'welcome_message' => 'nullable|string|max:500',
         ]);
 
         $data = [
             'name'            => $validated['name'],
             'starts_at'       => $validated['starts_at'],
+            'event_date' => $validated['event_date'],
             'ends_at'         => $validated['ends_at'],
             'goal_amount'     => $validated['goal_amount'] ?? null,
             'theme_color'     => $validated['theme_color'] ?? '#dc2626',
