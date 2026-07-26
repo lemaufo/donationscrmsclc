@@ -14,6 +14,10 @@ class AdminController extends Controller
     {
         $campaign = Campaign::where('is_active', true)->first();
 
+        if (!$campaign) {
+            return view('admin.no-campaign');
+        }
+
         $totalRaised = Donation::where('campaign_id', $campaign->id)
             ->where('status', 'paid')
             ->sum('amount');
