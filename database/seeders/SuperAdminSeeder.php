@@ -21,7 +21,7 @@ class SuperAdminSeeder extends Seeder
 
         User::create([
             'name'     => env('SUPERADMIN_NAME', 'Leiber Trejo'),
-            'email'    => env('SUPERADMIN_EMAIL', 'leiber@teknologix.mx'),
+            'email'    => env('SUPERADMIN_EMAIL', 'ventas@teknologix.mx'),
             'password' => Hash::make(env('SUPERADMIN_PASSWORD')),
             'role'     => 'superadmin',
         ]);
