@@ -80,14 +80,14 @@ class CampaignController extends Controller
             'theme_color'     => 'nullable|string|max:7',
             'logo'            => 'nullable|image|max:2048',
             'banner'          => 'nullable|image|max:2048',
-            'event_date' => 'required|date',
+            'event_date' => 'nullable|date',
             'welcome_message' => 'nullable|string|max:500',
         ]);
 
         $data = [
             'name'            => $validated['name'],
+            'event_date'      => $validated['starts_at'],
             'starts_at'       => $validated['starts_at'],
-            'event_date' => $validated['event_date'],
             'ends_at'         => $validated['ends_at'],
             'goal_amount'     => $validated['goal_amount'] ?? null,
             'theme_color'     => $validated['theme_color'] ?? '#dc2626',
