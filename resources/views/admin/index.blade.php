@@ -6,13 +6,16 @@
 
 @section('header_right')
     <div class="flex items-center gap-3 text-sm">
-        <span class="text-gray-600 font-medium">Admin Cruz Roja</span>
-        <a href="#" class="text-gray-400 hover:text-gray-600 transition flex items-center gap-1 text-xs">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
-            </svg>
-            Cerrar sesión
-        </a>
+        <span class="text-gray-600 font-medium">{{ auth()->user()->name }}</span>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="text-xs text-gray-400 hover:text-gray-600 transition flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                </svg>
+                Cerrar sesión
+            </button>
+        </form>
     </div>
 @endsection
 
@@ -36,6 +39,15 @@
                 </svg>
                 Exportar CSV
             </a>
+            @if(auth()->user()->isSuperAdmin())
+            <a href="{{ route('admin.users.index') }}"
+                class="border border-gray-200 text-gray-600 hover:border-red-300 hover:text-red-600 text-sm font-medium px-4 py-2 rounded-xl transition flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+                Usuarios
+            </a>
+            @endif
             <a href="{{ route('admin.campaigns.index') }}"
                 class="border border-gray-200 text-gray-600 hover:border-red-300 hover:text-red-600 text-sm font-medium px-4 py-2 rounded-xl transition flex items-center gap-1.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

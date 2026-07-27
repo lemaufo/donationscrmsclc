@@ -1,16 +1,21 @@
 @extends('layouts.public')
 
-@section('title', 'Campañas — Admin')
+@section('title', 'Campañas — Impact Day')
 @section('content_width', 'max-w-6xl mx-auto')
 @section('header_width', 'max-w-6xl mx-auto')
 
 @section('header_right')
     <div class="flex items-center gap-3 text-sm">
-        <a href="{{ route('admin.index') }}" class="text-gray-400 hover:text-gray-600 transition text-xs">
-            ← Dashboard
-        </a>
-        <span class="text-gray-300">·</span>
-        <span class="text-gray-600 font-medium">Admin Cruz Roja</span>
+        <span class="text-gray-600 font-medium">{{ auth()->user()->name }}</span>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="text-xs text-gray-400 hover:text-gray-600 transition flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                </svg>
+                Cerrar sesión
+            </button>
+        </form>
     </div>
 @endsection
 
