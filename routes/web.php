@@ -61,4 +61,12 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
+Route::get('/aviso-de-privacidad', function () {
+    return view('legal.privacy');
+})->name('legal.privacy');
+
+Route::get('/terminos-y-condiciones', function () {
+    return view('legal.terms');
+})->name('legal.terms');
+
 require __DIR__.'/auth.php';

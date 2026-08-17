@@ -12,7 +12,7 @@
 
     {{-- HEADER --}}
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="w-full px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between @yield('header_width', 'max-w-2xl mx-auto')">
+        <div class="@yield('header_width', 'max-w-6xl mx-auto') px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
 
             {{-- Logo Cruz Roja --}}
             <div class="flex items-center">
@@ -31,13 +31,10 @@
             {{-- Derecha --}}
             <div class="flex items-center gap-4 text-sm">
                 @yield('header_right')
-                @hasSection('header_right')
+                @if(isset($campaign) && $campaign->banner_url)
+                    <img src="{{ Storage::url($campaign->banner_url) }}" alt="Sponsor" class="h-5 opacity-60 grayscale object-contain">
                 @else
-                    @if(isset($campaign) && $campaign->banner_url)
-                        <img src="{{ Storage::url($campaign->banner_url) }}" alt="Sponsor" class="h-5 opacity-60 grayscale object-contain">
-                    @else
-                        <span class="text-xs text-gray-400"> </span>
-                    @endif
+                    <span class="text-xs text-gray-400 hidden sm:inline">Novo Nordisk</span>
                 @endif
             </div>
 
@@ -45,19 +42,14 @@
     </header>
 
     {{-- CONTENIDO --}}
-    <main class="flex-1 w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <div class="@yield('content_width', 'max-w-lg mx-auto')">
+    <main class="flex-1 w-full">
+        <div class="@yield('content_width', 'max-w-6xl mx-auto') px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
             @yield('content')
         </div>
     </main>
 
     {{-- FOOTER --}}
-    <footer class="bg-white border-t border-gray-100 py-4 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
-            <span>🔒 Pagos seguros cifrados por Stripe · SSL 256-bit · PCI DSS</span>
-            <span>Desarrollado por <a href="https://teknologix.mx" target="_blank" class="hover:text-gray-600 transition">Teknologix</a> · teknologix.mx</span>
-        </div>
-    </footer>
+    <x-footer />
 
     @livewireScripts
     @stack('scripts')

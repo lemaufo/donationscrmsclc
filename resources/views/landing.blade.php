@@ -40,19 +40,6 @@
         }
     </style>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const header = document.getElementById('main-header');
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 20) {
-                header.classList.add('header-glass');
-            } else {
-                header.classList.remove('header-glass');
-            }
-        });
-    });
-</script>
 <body class="grid-bg min-h-screen">
 
     {{-- HEADER --}}
@@ -152,18 +139,15 @@
         <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
-                {{-- Video YouTube --}}
                 <div class="flex items-center justify-center p-6 bg-gray-50 border-b lg:border-b-0 lg:border-r border-gray-100">
-                    <div class="relative w-full rounded-xl overflow-hidden shadow-sm" style="padding-bottom: 56.25%">
-                        <iframe
-                            class="absolute inset-0 w-full h-full"
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                            title="Impact Day — Cruz Roja México"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+                    <video
+                        class="rounded-xl w-full shadow-sm"
+                        controls
+                        preload="metadata"
+                        poster="{{ asset('images/video.png') }}">
+                        <source src="{{ asset('videos/VidaSaludable.mov') }}" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
                 </div>
 
                 {{-- Descripción --}}
@@ -261,23 +245,7 @@
     </section>
 
     {{-- FOOTER --}}
-    <footer class="border-t border-white/40 backdrop-blur-md bg-white/30 mt-4">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-4 text-xs text-gray-500">
-                    <a href="#" class="hover:text-gray-700 transition">Aviso de Privacidad</a>
-                    <span>·</span>
-                    <a href="#" class="hover:text-gray-700 transition">Términos y Condiciones</a>
-                    <span>·</span>
-                    <a href="https://cruzrojamexicana.org.mx" target="_blank" class="hover:text-gray-700 transition">Cruz Roja Mexicana</a>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-xs text-gray-500">Desarrollado por</span>
-                    <img src="{{ asset('images/teknologix.png') }}" alt="Teknologix" class="h-2 object-contain">
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 
     @if(isset($campaign) && $campaign && $campaign->starts_at && now()->lt($campaign->starts_at))
     <script>
