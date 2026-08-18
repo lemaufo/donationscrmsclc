@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logocrm.ico') }}">
     <title>@yield('title', 'Impact Day — Cruz Roja México')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -12,30 +13,18 @@
 
     {{-- HEADER --}}
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="@yield('header_width', 'max-w-6xl mx-auto') px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <div class="@yield('header_width', 'max-w-6xl mx-auto') px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
             {{-- Logo Cruz Roja --}}
-            <div class="flex items-center">
-                @if(isset($campaign) && $campaign->logo_url)
-                    <img src="{{ Storage::url($campaign->logo_url) }}" alt="Cruz Roja Mexicana" class="h-8 object-contain">
-                @else
-                    <svg class="h-8 w-auto" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="4" y="8" width="8" height="24" fill="#dc2626"/>
-                        <rect x="0" y="16" width="24" height="8" fill="#dc2626"/>
-                        <text x="30" y="16" font-family="sans-serif" font-size="8" font-weight="700" fill="#dc2626">CRUZ ROJA</text>
-                        <text x="30" y="27" font-family="sans-serif" font-size="8" font-weight="700" fill="#dc2626">MEXICANA</text>
-                    </svg>
-                @endif
-            </div>
+            <img src="{{ asset('images/crm.png') }}" alt="Cruz Roja Mexicana" class="h-10 object-contain">
 
-            {{-- Derecha --}}
-            <div class="flex items-center gap-4 text-sm">
+            {{-- Centro — SITALEL --}}
+            <img src="{{ asset('images/sitalel.png') }}" alt="SITALEL" class="h-12 object-contain hidden sm:block">
+
+            {{-- Derecha — Novo Nordisk + slot --}}
+            <div class="flex items-center gap-4">
                 @yield('header_right')
-                @if(isset($campaign) && $campaign->banner_url)
-                    <img src="{{ Storage::url($campaign->banner_url) }}" alt="Sponsor" class="h-5 opacity-60 grayscale object-contain">
-                @else
-                    <span class="text-xs text-gray-400 hidden sm:inline">Novo Nordisk</span>
-                @endif
+                <img src="{{ asset('images/novo.png') }}" alt="Novo Nordisk" class="h-7 object-contain opacity-80">
             </div>
 
         </div>

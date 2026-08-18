@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logocrm.ico') }}">
     <title>Impact Day 2026 — Cruz Roja México × Novo Nordisk</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
@@ -140,14 +141,15 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
                 <div class="flex items-center justify-center p-6 bg-gray-50 border-b lg:border-b-0 lg:border-r border-gray-100">
-                    <video
-                        class="rounded-xl w-full shadow-sm"
-                        controls
-                        preload="metadata"
-                        poster="{{ asset('images/video.png') }}">
-                        <source src="{{ asset('videos/VidaSaludable.mov') }}" type="video/mp4">
-                        Tu navegador no soporta la reproducción de video.
-                    </video>
+                    <div class="relative w-full rounded-xl overflow-hidden shadow-sm" style="padding-bottom: 56.25%">
+                        <iframe
+                            class="absolute inset-0 w-full h-full rounded-xl"
+                            src="https://www.youtube.com/embed/nDf1jnN18fw?modestbranding=1&rel=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
 
                 {{-- Descripción --}}
