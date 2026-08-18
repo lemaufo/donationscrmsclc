@@ -144,9 +144,11 @@
                     <div class="relative w-full rounded-xl overflow-hidden shadow-sm" style="padding-bottom: 56.25%">
                         <iframe
                             class="absolute inset-0 w-full h-full rounded-xl"
-                            src="https://www.youtube.com/embed/nDf1jnN18fw?modestbranding=1&rel=0"
+                            src="https://www.youtube.com/embed/nDf1jnN18fw?si=ta5H1qlzmtZA1uLV"
+                            title="YouTube video player"
                             frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen>
                         </iframe>
                     </div>
