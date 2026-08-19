@@ -44,23 +44,29 @@
 <body class="grid-bg min-h-screen">
 
     {{-- HEADER --}}
-    <header id="main-header" class="relative top-5 z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<header id="main-header" class="relative z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-30 grid grid-cols-3 items-center">
 
-        {{-- Cruz Roja — pequeño izquierda --}}
-        <img src="{{ asset('images/crm.png') }}"
-            alt="Cruz Roja Mexicana"
-            class="h-10 object-contain flex-shrink-0">
+        {{-- Cruz Roja — izquierda --}}
+        <div class="flex items-center">
+            <img src="{{ asset('images/crm.png') }}"
+                alt="Cruz Roja Mexicana"
+                class="h-10 object-contain">
+        </div>
 
-        {{-- SITALEL — grande centro --}}
-        <img src="{{ asset('images/sitalel.png') }}"
-            alt="SITALEL"
-            class="h-22 object-contain flex-shrink-0">
+        {{-- SITALEL — centro exacto --}}
+        <div class="flex items-center justify-center">
+            <img src="{{ asset('images/sitalel.png') }}"
+                alt="SITALEL"
+                class="h-18 object-contain">
+        </div>
 
-        {{-- Novo Nordisk — pequeño derecha --}}
-        <img src="{{ asset('images/novo.png') }}"
-            alt="Novo Nordisk"
-            class="h-11 object-contain flex-shrink-0 opacity-80">
+        {{-- Novo Nordisk — derecha --}}
+        <div class="flex items-center justify-end">
+            <img src="{{ asset('images/novo.png') }}"
+                alt="Novo Nordisk"
+                class="h-10 object-contain opacity-80">
+        </div>
 
     </div>
 </header>

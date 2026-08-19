@@ -63,7 +63,7 @@
             <div class="flex items-center gap-2 text-xs text-gray-400">
                 <span>© {{ date('Y') }} Cruz Roja Mexicana · Desarrollado por</span>
                 <a href="https://teknologix.mx" target="_blank">
-                    <img src="{{ asset('images/teknologix.png') }}" alt="Teknologix" class="h-4 object-contain hover:opacity-70 transition">
+                    <img src="{{ asset('images/teknologix.png') }}" alt="Teknologix" class="h-3 object-contain hover:opacity-70 transition">
                 </a>
             </div>
         </div>

@@ -19,12 +19,12 @@
             <img src="{{ asset('images/crm.png') }}" alt="Cruz Roja Mexicana" class="h-10 object-contain">
 
             {{-- Centro — SITALEL --}}
-            <img src="{{ asset('images/sitalel.png') }}" alt="SITALEL" class="h-12 object-contain hidden sm:block">
+            <img src="{{ asset('images/sitalel.png') }}" alt="SITALEL" class="h-14 object-contain hidden sm:block">
 
             {{-- Derecha — Novo Nordisk + slot --}}
             <div class="flex items-center gap-4">
                 @yield('header_right')
-                <img src="{{ asset('images/novo.png') }}" alt="Novo Nordisk" class="h-7 object-contain opacity-80">
+                <img src="{{ asset('images/novo.png') }}" alt="Novo Nordisk" class="h-10 object-contain opacity-80">
             </div>
 
         </div>
