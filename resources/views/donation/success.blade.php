@@ -50,7 +50,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     {{-- Columna derecha — Compartir --}}
@@ -77,6 +76,79 @@
                 </svg>
                 Copiar link de campaña
             </button>
+        </div>
+        @endif
+
+         {{-- Animación cruz con aporte --}}
+        @php
+            $campaign = $donation->campaign ?? App\Models\Campaign::where('is_active', true)->first();
+            $goalAmount = $campaign->goal_amount ?? 0;
+            $totalRaised = $goalAmount > 0
+                ? App\Models\Donation::where('campaign_id', $campaign->id)->where('status', 'paid')->sum('amount')
+                : 0;
+            $before = max(0, $totalRaised - $donation->amount);
+            $after  = $totalRaised;
+            $pctBefore = $goalAmount > 0 ? min(100, ($before / $goalAmount) * 100) : 0;
+            $pctAfter  = $goalAmount > 0 ? min(100, ($after  / $goalAmount) * 100) : 0;
+            $pctDiff   = round($pctAfter - $pctBefore, 1);
+        @endphp
+
+        @if($goalAmount > 0)
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 text-center">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">
+                Tu aporte a la meta de la campaña
+            </p>
+
+            {{-- Cruz SVG animada --}}
+            <div class="flex justify-center mb-5">
+                <div class="relative">
+                    <svg viewBox="0 0 100 100" class="w-36 h-36" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="cruz-success">
+                                <rect x="33" y="5"  width="34" height="90" rx="4"/>
+                                <rect x="5"  y="33" width="90" height="34" rx="4"/>
+                            </clipPath>
+                            <linearGradient id="cruz-success-grad" x1="0" y1="1" x2="0" y2="0">
+                                <stop offset="0%"   stop-color="#b91c1c"/>
+                                <stop offset="100%" stop-color="#ef4444"/>
+                            </linearGradient>
+                        </defs>
+
+                        {{-- Fondo cruz --}}
+                        <rect x="33" y="5"  width="34" height="90" rx="4" fill="#f3f4f6"/>
+                        <rect x="5"  y="33" width="90" height="34" rx="4" fill="#f3f4f6"/>
+
+                        {{-- Relleno animado --}}
+                        <g clip-path="url(#cruz-success)">
+                            <rect id="cruz-fill-success"
+                                x="0" y="100" width="100" height="0"
+                                fill="url(#cruz-success-grad)"/>
+                        </g>
+
+                        {{-- Porcentaje --}}
+                        <text id="cruz-pct-success" x="50" y="55"
+                            text-anchor="middle"
+                            font-size="14" font-weight="900"
+                            font-family="Inter, sans-serif"
+                            fill="#dc2626">0%</text>
+                    </svg>
+
+                    {{-- Destello de aporte --}}
+                    @if($pctDiff > 0)
+                    <div id="aporte-badge"
+                        class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full opacity-0 transition-all duration-500">
+                        +{{ $pctDiff }}%
+                    </div>
+                    @endif
+                </div>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-1">
+                La campaña va en <strong class="text-red-600">{{ number_format($pctAfter, 1) }}%</strong> de su meta
+            </p>
+            <p class="text-xs text-gray-400">
+                Tu donativo sumó <span class="font-semibold text-red-500">+{{ $pctDiff > 0 ? $pctDiff : '< 0.1' }}%</span> al progreso
+            </p>
         </div>
         @endif
 
@@ -107,5 +179,55 @@
     function copyLink(url) {
         navigator.clipboard.writeText(url).then(() => alert('¡Link copiado!'));
     }
+
+    // Animación cruz en pantalla de gracias
+    (function() {
+        const pctBefore = {{ $pctBefore }};
+        const pctAfter  = {{ $pctAfter }};
+        const duration  = 2000;
+        const delay     = 400;
+
+        setTimeout(() => {
+            const cruzFill = document.getElementById('cruz-fill-success');
+            const cruzPct  = document.getElementById('cruz-pct-success');
+            const badge    = document.getElementById('aporte-badge');
+            if (!cruzFill) return;
+
+            const startTime = performance.now();
+
+            function animate(currentTime) {
+                const elapsed  = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased    = 1 - Math.pow(1 - progress, 3);
+                const current  = pctBefore + (pctAfter - pctBefore) * eased;
+
+                const fillHeight = current;
+                const startY     = 100 - fillHeight;
+
+                cruzFill.setAttribute('y', startY);
+                cruzFill.setAttribute('height', fillHeight);
+
+                if (cruzPct) {
+                    cruzPct.textContent = Math.round(current) + '%';
+                    cruzPct.setAttribute('fill', current > 45 ? 'white' : '#dc2626');
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    // Mostrar badge de aporte
+                    if (badge) {
+                        badge.style.opacity = '1';
+                        badge.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            badge.style.transform = 'scale(1)';
+                        }, 300);
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }, delay);
+    })();
 </script>
 @endpush
