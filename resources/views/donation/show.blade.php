@@ -56,6 +56,31 @@
             <p class="text-xs font-mono text-blue-300 mt-2 bg-white/10 inline-block px-2 py-0.5 rounded-lg">{{ $collaborator->ref_code }}</p>
         </div>
         @endif
+
+        {{-- Card Stripe --}}
+        <div class="bg-gray-50 rounded-2xl border border-gray-100 p-5">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 bg-white rounded-xl border border-gray-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <svg class="w-4 h-4 text-[#635bff]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-gray-700">Pagos seguros con Stripe</p>
+                    <p class="text-xs text-gray-400">Tecnología usada por Amazon, Uber y Netflix</p>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                Stripe es la pasarela de pago más confiable del mundo. Tus datos de tarjeta están cifrados y nunca son almacenados en nuestros servidores.
+            </p>
+            <a href="https://stripe.com/mx" target="_blank"
+                class="inline-flex items-center gap-1.5 text-xs text-[#635bff] hover:underline font-medium transition">
+                Saber más sobre Stripe
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+            </a>
+        </div>
     </div>
 
     {{-- Columna derecha — Formulario --}}
@@ -226,7 +251,7 @@
                         <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <p class="text-xs text-amber-700">El CFDI es emitido por Cruz Roja Mexicana. Tus datos se envían al área de facturación para su procesamiento posterior.</p>
+                        <p class="text-xs text-amber-700">El CFDI es emitido por Cruz Roja Mexicana. Tus datos se envían al área de facturación para su procesamiento posterior. El comprobante fiscal será enviado a tu correo en un lapso estimado de <strong>3 días hábiles</strong> a partir de la fecha del donativo.</p>
                     </div>
                 </div>
             </div>

@@ -254,6 +254,68 @@
         </div>
     </section>
 
+    {{-- PREGUNTAS FRECUENTES --}}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h2 class="text-2xl font-black text-center text-gray-800 mb-8">
+            Preguntas <span class="text-sitalel">frecuentes</span>
+        </h2>
+
+        <div class="space-y-3" id="faq">
+
+            @foreach([
+                [
+                    'q' => '¿A dónde va mi donativo?',
+                    'a' => 'Tu donativo va directamente a la cuenta institucional de Cruz Roja Mexicana, Delegación San Cristóbal de Las Casas. Ningún peso pasa por cuentas intermedias.',
+                ],
+                [
+                    'q' => '¿Es seguro pagar con tarjeta en esta plataforma?',
+                    'a' => 'Sí. Los pagos son procesados por Stripe, que cuenta con certificación PCI DSS Level 1 — el estándar más alto de seguridad en pagos a nivel mundial. Tus datos de tarjeta nunca son almacenados en nuestros servidores.',
+                ],
+                [
+                    'q' => '¿Puedo obtener un comprobante fiscal (CFDI) por mi donativo?',
+                    'a' => 'Sí. Al momento de donar puedes activar la opción de solicitar factura e ingresar tus datos fiscales. El CFDI es emitido por Cruz Roja Mexicana, I.A.P. Tu donativo es deducible de impuestos.',
+                ],
+                [
+                    'q' => '¿Cuáles son los montos que puedo donar?',
+                    'a' => 'Puedes seleccionar entre los montos sugeridos: $100, $500, $1,000, $2,500, $6,000 o $10,000 MXN. También puedes ingresar cualquier otro monto desde $50 MXN. El monto máximo por transacción es de $100,000 MXN.',
+                ],
+                [
+                    'q' => '¿Qué es Impact Day?',
+                    'a' => 'Impact Day es una iniciativa de Cruz Roja Mexicana en colaboración con Novo Nordisk México, donde colaboradores de Novo actúan como agentes de campo recaudando donativos para comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
+                ],
+                [
+                    'q' => '¿Cómo sé que mi donativo fue recibido correctamente?',
+                    'a' => 'Al completar tu donativo verás una pantalla de confirmación. Adicionalmente, si proporcionaste tu correo electrónico, recibirás un comprobante de pago.',
+                ],
+                [
+                    'q' => '¿Puedo donar de forma anónima?',
+                    'a' => 'Tu nombre es requerido para procesar el donativo, pero no se publica en ningún lugar público de la plataforma. Solo Cruz Roja Mexicana tiene acceso a los datos del donante.',
+                ],
+                [
+                    'q' => '¿En qué se utilizan los donativos?',
+                    'a' => 'Los recursos se destinan a programas de atención médica, prevención de enfermedades, educación en salud y cobertura en comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
+                ],
+            ] as $index => $item)
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 overflow-hidden">
+                <button
+                    onclick="toggleFaq({{ $index }})"
+                    class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-white/80 transition">
+                    <span class="font-semibold text-gray-800 text-sm pr-4">{{ $item['q'] }}</span>
+                    <svg id="faq-icon-{{ $index }}"
+                        class="w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div id="faq-answer-{{ $index }}" class="hidden px-6 pb-4">
+                    <p class="text-sm text-gray-600 leading-relaxed">{{ $item['a'] }}</p>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+    </section>
+
     {{-- FOOTER --}}
     <x-footer />
 
@@ -282,6 +344,24 @@
         setInterval(updateCountdown, 1000);
     </script>
     @endif
+
+    <script>
+    function toggleFaq(index) {
+        const answer = document.getElementById('faq-answer-' + index);
+        const icon   = document.getElementById('faq-icon-' + index);
+        const isOpen = !answer.classList.contains('hidden');
+
+        // Cerrar todos
+        document.querySelectorAll('[id^="faq-answer-"]').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+
+        // Abrir el seleccionado si estaba cerrado
+        if (!isOpen) {
+            answer.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
 
 </body>
 </html>

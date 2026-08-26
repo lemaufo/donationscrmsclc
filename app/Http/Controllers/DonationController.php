@@ -29,14 +29,21 @@ class DonationController extends Controller
     }
 
     public function store(Request $request)
-{
-    $validated = $request->validate([
-        'amount'          => 'required|numeric|min:50|max:50000',
+    {
+        $validated = $request->validate([
+        'amount'          => 'required|numeric|min:50|max:100000',
         'collaborator_id' => 'nullable|exists:collaborators,id',
         'campaign_id'     => 'required|exists:campaigns,id',
         'donor_name'      => 'required|string|max:255',
         'donor_email'     => 'nullable|email|max:255',
         'donor_rfc'       => 'nullable|string|max:13',
+    ], [
+        'amount.required'     => 'El monto es obligatorio.',
+        'amount.numeric'      => 'El monto debe ser un número válido.',
+        'amount.min'          => 'El monto mínimo es de $50 MXN.',
+        'amount.max'          => 'El monto máximo por transacción es de $100,000 MXN.',
+        'donor_name.required' => 'El nombre completo es obligatorio.',
+        'donor_email.email'   => 'Ingresa un correo electrónico válido.',
     ]);
 
     // PLD: Tope $180,000 MXN en 6 meses por RFC
