@@ -400,6 +400,14 @@
                     'a' => 'Tu donativo va directamente a la cuenta institucional de Cruz Roja Mexicana, Delegación San Cristóbal de Las Casas. Ningún peso pasa por cuentas intermedias.',
                 ],
                 [
+                    'q' => '¿Qué métodos de pago se aceptan?',
+                    'a' => 'Se aceptan tarjetas de crédito y débito, tanto nacionales como internacionales, físicas o digitales (incluidas las generadas por aplicaciones bancarias con CVV dinámico). No se aceptan pagos en efectivo, depósitos bancarios ni transferencias SPEI directas, por razones de seguridad, trazabilidad y cumplimiento de la normativa de Prevención de Lavado de Dinero (PLD).',
+                ],
+                [
+                    'q' => '¿Cuáles son los montos que puedo donar?',
+                    'a' => 'Puedes seleccionar entre los montos sugeridos: $100, $500, $1,000, $2,500, $6,000 o $10,000 MXN. También puedes ingresar cualquier monto desde $50 MXN. El monto máximo por transacción es de $100,000 MXN, y el límite acumulado es de $180,000 MXN por RFC en un período de 6 meses, conforme a la normativa fiscal aplicable.',
+                ],
+                [
                     'q' => '¿Es seguro pagar con tarjeta en esta plataforma?',
                     'a' => 'Sí. Los pagos son procesados por Stripe, que cuenta con certificación PCI DSS Level 1 — el estándar más alto de seguridad en pagos a nivel mundial. Tus datos de tarjeta nunca son almacenados en nuestros servidores.',
                 ],
