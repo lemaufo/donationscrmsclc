@@ -254,6 +254,134 @@
         </div>
     </section>
 
+    {{-- INSTRUCTIVO DONANTES --}}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <div class="text-center mb-8">
+            <p class="text-xs font-semibold text-orange-500 uppercase tracking-widest mb-2">¿Cómo donar?</p>
+            <h2 class="text-2xl font-black text-gray-800">
+                Haz tu donativo en <span class="text-sitalel">3 pasos</span>
+            </h2>
+            <p class="text-sm text-gray-500 mt-2">Rápido, seguro y deducible de impuestos</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+            {{-- Paso 1 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-6 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">1</div>
+                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4 mt-2">
+                    <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Abre el link</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Recibe el link personal de un colaborador de Novo Nordisk o escanea su código QR con tu teléfono.</p>
+            </div>
+
+            {{-- Paso 2 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-6 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">2</div>
+                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4 mt-2">
+                    <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Elige tu monto</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Selecciona el monto que deseas donar: $100, $500, $1,000, $2,500, $6,000 o $10,000 MXN. También puedes ingresar otro monto.</p>
+            </div>
+
+            {{-- Paso 3 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-6 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">3</div>
+                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4 mt-2">
+                    <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Paga con tarjeta</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Ingresa los datos de tu tarjeta de crédito o débito. El pago es procesado por Stripe con cifrado SSL. ¡Listo, tu donativo llega directo a Cruz Roja!</p>
+            </div>
+
+        </div>
+
+        {{-- Nota CFDI --}}
+        <div class="mt-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/60 px-5 py-3 flex items-center gap-3">
+            <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="text-xs text-gray-500">
+                ¿Necesitas factura? Durante el proceso puedes solicitar tu <strong class="text-gray-700">comprobante fiscal (CFDI)</strong> — tu donativo es deducible de impuestos.
+            </p>
+        </div>
+
+    </section>
+
+    {{-- INSTRUCTIVO COLABORADORES --}}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <div class="text-center mb-8">
+            <p class="text-xs font-semibold text-[#1e3a8a] uppercase tracking-widest mb-2">¿Eres colaborador de Novo Nordisk?</p>
+            <h2 class="text-2xl font-black text-gray-800">
+                Empieza a recaudar en <span class="text-[#1e3a8a]">4 pasos</span>
+            </h2>
+            <p class="text-sm text-gray-500 mt-2">Tu participación hace la diferencia</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            {{-- Paso 1 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-[#1e3a8a] text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">1</div>
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-3 mt-2">
+                    <svg class="w-6 h-6 text-[#1e3a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Regístrate</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Abre el link de invitación que te compartió Cruz Roja o Novo Nordisk y llena tu nombre, correo y departamento.</p>
+            </div>
+
+            {{-- Paso 2 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-[#1e3a8a] text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">2</div>
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-3 mt-2">
+                    <svg class="w-6 h-6 text-[#1e3a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Obtén tu link y QR</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Al registrarte recibes tu link personal único y tu código QR.</p>
+            </div>
+
+            {{-- Paso 3 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-[#1e3a8a] text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">3</div>
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-3 mt-2">
+                    <svg class="w-6 h-6 text-[#1e3a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Comparte</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Comparte tu link por WhatsApp, muestra tu QR en el evento o proyéctalo en pantalla para que los donantes escaneen.</p>
+            </div>
+
+            {{-- Paso 4 --}}
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 text-center relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-[#1e3a8a] text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">4</div>
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-3 mt-2">
+                    <svg class="w-6 h-6 text-[#1e3a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Sigue tu impacto</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Desde tu dashboard personal ve en tiempo real cuánto has recaudado y tu posición en el ranking de colaboradores.</p>
+            </div>
+
+        </div>
+
+    </section>
+
     {{-- PREGUNTAS FRECUENTES --}}
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 class="text-2xl font-black text-center text-gray-800 mb-8">
@@ -263,6 +391,10 @@
         <div class="space-y-3" id="faq">
 
             @foreach([
+                [
+                    'q' => '¿Qué es Impact Day?',
+                    'a' => 'Impact Day es una iniciativa de Cruz Roja Mexicana en colaboración con Novo Nordisk México, donde colaboradores de Novo actúan como agentes de campo recaudando donativos para comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
+                ],
                 [
                     'q' => '¿A dónde va mi donativo?',
                     'a' => 'Tu donativo va directamente a la cuenta institucional de Cruz Roja Mexicana, Delegación San Cristóbal de Las Casas. Ningún peso pasa por cuentas intermedias.',
@@ -278,10 +410,6 @@
                 [
                     'q' => '¿Cuáles son los montos que puedo donar?',
                     'a' => 'Puedes seleccionar entre los montos sugeridos: $100, $500, $1,000, $2,500, $6,000 o $10,000 MXN. También puedes ingresar cualquier otro monto desde $50 MXN. El monto máximo por transacción es de $100,000 MXN.',
-                ],
-                [
-                    'q' => '¿Qué es Impact Day?',
-                    'a' => 'Impact Day es una iniciativa de Cruz Roja Mexicana en colaboración con Novo Nordisk México, donde colaboradores de Novo actúan como agentes de campo recaudando donativos para comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
                 ],
                 [
                     'q' => '¿Cómo sé que mi donativo fue recibido correctamente?',
