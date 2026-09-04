@@ -76,16 +76,52 @@ class AdminController extends Controller
         return response()->stream(function () use ($donations) {
             $handle = fopen('php://output', 'w');
 
-            fputcsv($handle, ['Fecha', 'Donante', 'Colaborador', 'Departamento', 'Monto (MXN)', 'Stripe ID']);
+            // BOM para Excel en español
+            fprintf($handle, chr(0xEF).chr(0xBB).chr(0xBF));
+
+            fputcsv($handle, [
+                'Fecha',
+                'Hora',
+                'Donante',
+                'Colaborador',
+                'Ref. Colaborador',
+                'Departamento',
+                'Monto (MXN)',
+                'Método de pago',
+                'Stripe ID',
+                'Solicita CFDI',
+                'Tipo de persona',
+                'RFC',
+                'Razón social',
+                'Régimen fiscal',
+                'Uso CFDI',
+                'Código postal fiscal',
+                'Correo fiscal',
+                'Correo donante',
+                'Estado',
+            ]);
 
             foreach ($donations as $donation) {
                 fputcsv($handle, [
-                    $donation->paid_at?->format('d/m/Y H:i'),
+                    $donation->paid_at?->format('d/m/Y'),
+                    $donation->paid_at?->format('H:i:s'),
                     $donation->donor_name ?? 'Anónimo',
                     $donation->collaborator?->name,
+                    $donation->collaborator?->ref_code,
                     $donation->collaborator?->department,
                     number_format($donation->amount, 2),
+                    $donation->payment_method ?? 'card',
                     $donation->stripe_payment_intent_id,
+                    $donation->wants_invoice ? 'Sí' : 'No',
+                    $donation->person_type === 'fisica' ? 'Física' : ($donation->person_type === 'moral' ? 'Moral' : ''),
+                    $donation->donor_rfc ?? '',
+                    $donation->razon_social ?? '',
+                    $donation->regimen_fiscal ?? '',
+                    $donation->uso_cfdi ?? '',
+                    $donation->codigo_postal ?? '',
+                    $donation->fiscal_email ?? '',
+                    $donation->donor_email ?? '',
+                    'Pagado',
                 ]);
             }
 
