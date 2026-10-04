@@ -38,12 +38,32 @@
             </div>
 
             <div class="mb-4">
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
                     Correo electrónico <span class="text-red-500">*</span>
                 </label>
                 <input type="email" name="email" value="{{ old('email') }}" required
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition @error('email') border-red-400 @enderror"
-                    placeholder="correo@ejemplo.com">
+                    class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition @error('email') border-red-400 @enderror"
+                    placeholder="tu.nombre@novonordisk.com">
+                <p class="text-xs text-gray-400 mt-1">Solo se aceptan correos @novonordisk.com</p>
+                @error('email')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                    Región <span class="text-red-500">*</span>
+                </label>
+                <select name="region" required
+                    class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white @error('region') border-red-400 @enderror">
+                    <option value="">Selecciona tu región</option>
+                    <option value="Norte" {{ old('region') == 'Norte' ? 'selected' : '' }}>Norte</option>
+                    <option value="Centro" {{ old('region') == 'Centro' ? 'selected' : '' }}>Centro</option>
+                    <option value="Sur" {{ old('region') == 'Sur' ? 'selected' : '' }}>Sur</option>
+                </select>
+                @error('region')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-4">

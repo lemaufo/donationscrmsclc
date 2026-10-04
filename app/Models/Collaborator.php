@@ -19,6 +19,7 @@ class Collaborator extends Model
         'email',
         'employee_id',
         'department',
+        'region',
         'personal_goal',
         'is_active',
     ];

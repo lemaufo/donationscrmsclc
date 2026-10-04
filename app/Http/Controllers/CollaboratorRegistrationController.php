@@ -32,9 +32,20 @@ class CollaboratorRegistrationController extends Controller
 
         $validated = $request->validate([
             'name'        => 'required|string|max:255',
-            'email'       => 'required|email|unique:collaborators,email|max:255',
+            'email'       => [
+                'required',
+                'email',
+                'unique:collaborators,email',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if (!str_ends_with(strtolower($value), '@novonordisk.com')) {
+                        $fail('Solo se permiten correos con dominio @novonordisk.com.');
+                    }
+                },
+            ],
             'employee_id' => 'nullable|string|max:100',
             'department'  => 'nullable|string|max:100',
+            'region'      => 'required|string|max:100',
         ]);
 
         // Generar iniciales (3 letras: nombre + apellido1 + apellido2)
@@ -53,6 +64,7 @@ class CollaboratorRegistrationController extends Controller
             'email'       => $validated['email'],
             'employee_id' => $validated['employee_id'] ?? null,
             'department'  => $validated['department'] ?? null,
+            'region'      => $validated['region'],
             'is_active'   => true,
         ]);
 
