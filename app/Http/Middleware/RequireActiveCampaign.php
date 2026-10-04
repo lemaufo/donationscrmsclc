@@ -16,6 +16,24 @@ class RequireActiveCampaign
             return response()->view('errors.no-campaign', [], 200);
         }
 
+        $now = now();
+
+        // Antes de la fecha de inicio
+        if ($campaign->starts_at && $now->lt($campaign->starts_at)) {
+            return response()->view('errors.campaign-upcoming', [
+                'campaign'  => $campaign,
+                'starts_at' => $campaign->starts_at,
+            ], 200);
+        }
+
+        // Después de la fecha de fin
+        if ($campaign->ends_at && $now->gt($campaign->ends_at)) {
+            return response()->view('errors.campaign-ended', [
+                'campaign' => $campaign,
+                'ends_at'  => $campaign->ends_at,
+            ], 200);
+        }
+
         return $next($request);
     }
 }
