@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logocrm.ico') }}">
-    <title>Impact Day 2026 — Cruz Roja México × Novo Nordisk</title>
+    <title>Impact Days 2026 — Cruz Roja México × Novo Nordisk</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -81,7 +81,7 @@
         </div>
 
         <h1 class="text-5xl sm:text-6xl font-black text-[#1e3a8a] leading-none mb-2">
-            Impact Day
+            Impact Days
         </h1>
         <h2 class="text-5xl sm:text-6xl font-black text-sitalel italic leading-none mb-6">
             2026
@@ -172,7 +172,7 @@
                         Cruz Roja Mexicana en Chiapas trabaja día a día brindando atención médica, apoyo en desastres y programas de salud comunitaria a las poblaciones más vulnerables del estado.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        Tu donativo este Impact Day hace posible continuar con esta misión.
+                        Tu donativo estos Impact Days hace posible continuar con esta misión.
                     </p>
                 </div>
 
@@ -392,8 +392,8 @@
 
             @foreach([
                 [
-                    'q' => '¿Qué es Impact Day?',
-                    'a' => 'Impact Day es una iniciativa de Cruz Roja Mexicana en colaboración con Novo Nordisk México, donde colaboradores de Novo actúan como agentes de campo recaudando donativos para comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
+                    'q' => '¿Qué es Impact Days?',
+                    'a' => 'Impact Days es una iniciativa de Cruz Roja Mexicana en colaboración con Novo Nordisk México, donde colaboradores de Novo actúan como agentes de campo recaudando donativos para comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.',
                 ],
                 [
                     'q' => '¿A dónde va mi donativo?',
@@ -499,5 +499,18 @@
     }
 </script>
 
+    {{-- Botón flotante WhatsApp --}}
+    <a href="https://wa.me/5219618920410?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20plataforma%20Impact%20Days%20de%20Cruz%20Roja%20Mexicana."
+        target="_blank"
+        class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+        style="padding: 14px 20px 14px 16px;">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.154-1.611A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.207-1.371l-.373-.221-3.865 1.013 1.033-3.772-.242-.386A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        <span class="text-sm font-semibold max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap">
+            ¿Necesitas ayuda?
+        </span>
+    </a>
 </body>
 </html>
