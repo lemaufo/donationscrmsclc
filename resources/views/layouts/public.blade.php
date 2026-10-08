@@ -24,7 +24,7 @@
             {{-- Derecha — Novo Nordisk + slot --}}
             <div class="flex items-center gap-4">
                 @yield('header_right')
-                <img src="{{ asset('images/novo.png') }}" alt="Novo Nordisk" class="h-10 object-contain opacity-80">
+                <img src="{{ asset('images/novo.png') }}" alt="Novo Nordisk" class="h-24 object-contain opacity-80">
             </div>
 
         </div>

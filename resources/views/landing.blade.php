@@ -65,7 +65,7 @@
         <div class="flex items-center justify-end">
             <img src="{{ asset('images/novo.png') }}"
                 alt="Novo Nordisk"
-                class="h-10 object-contain opacity-80">
+                class="h-24 object-contain opacity-80">
         </div>
 
     </div>
