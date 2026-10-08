@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Únete — {{ $campaign->name }}')
+@section('title', 'Registro de colaborador — Impact Days · Cruz Roja Mexicana')
 
 @section('content')
 

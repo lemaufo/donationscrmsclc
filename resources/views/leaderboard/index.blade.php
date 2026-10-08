@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Leaderboard — {{ $campaign->name }}')
+@section('title', 'Leaderboard — Impact Days · Cruz Roja Mexicana')
 @section('content_width', 'max-w-6xl mx-auto')
 @section('header_width', 'max-w-6xl mx-auto')
 
