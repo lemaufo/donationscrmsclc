@@ -76,15 +76,29 @@
                     placeholder="EMP-00000">
             </div>
 
-            <div>
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
-                    Departamento
-                    <span class="text-gray-400 normal-case font-normal">(opcional)</span>
-                </label>
-                <input type="text" name="department" value="{{ old('department') }}"
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition"
-                    placeholder="Ej. Ventas, Marketing, TI">
-            </div>
+            {{-- Departamento --}}
+        <div class="mb-4">
+            <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                Departamento <span class="text-red-500">*</span>
+            </label>
+            <select name="department" required
+                class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white @error('department') border-red-400 @enderror">
+                <option value="">Selecciona tu departamento</option>
+                <option value="MR-PV" {{ old('department') == 'MR-PV' ? 'selected' : '' }}>MR-PV</option>
+                <option value="Rare Disease" {{ old('department') == 'Rare Disease' ? 'selected' : '' }}>Rare Disease</option>
+                <option value="CAS" {{ old('department') == 'CAS' ? 'selected' : '' }}>CAS</option>
+                <option value="MACO" {{ old('department') == 'MACO' ? 'selected' : '' }}>MACO</option>
+                <option value="F&O" {{ old('department') == 'F&O' ? 'selected' : '' }}>F&O</option>
+                <option value="P&O" {{ old('department') == 'P&O' ? 'selected' : '' }}>P&O</option>
+                <option value="LEC-Q" {{ old('department') == 'LEC-Q' ? 'selected' : '' }}>LEC-Q</option>
+                <option value="IT Operations" {{ old('department') == 'IT Operations' ? 'selected' : '' }}>IT Operations</option>
+                <option value="Clinical Operations" {{ old('department') == 'Clinical Operations' ? 'selected' : '' }}>Clinical Operations</option>
+                <option value="Facilities" {{ old('department') == 'Facilities' ? 'selected' : '' }}>Facilities</option>
+            </select>
+            @error('department')
+                <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+            @enderror
+        </div>
 
         </div>
 

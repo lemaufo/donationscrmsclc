@@ -63,7 +63,7 @@ class CollaboratorRegistrationController extends Controller
             'name'        => $validated['name'],
             'email'       => $validated['email'],
             'employee_id' => $validated['employee_id'] ?? null,
-            'department'  => $validated['department'] ?? null,
+            'department' => 'required|string|in:MR-PV,Rare Disease,CAS,MACO,F&O,P&O,LEC-Q,IT Operations,Clinical Operations,Facilities',
             'region'      => $validated['region'],
             'is_active'   => true,
         ]);
