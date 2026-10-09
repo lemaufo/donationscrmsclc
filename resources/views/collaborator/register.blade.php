@@ -50,55 +50,52 @@
                 @enderror
             </div>
 
+            {{-- Área --}}
             <div class="mb-4">
                 <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
-                    Región <span class="text-red-500">*</span>
+                    Área <span class="text-red-500">*</span>
                 </label>
-                <select name="region" required
-                    class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white @error('region') border-red-400 @enderror">
-                    <option value="">Selecciona tu región</option>
-                    <option value="Norte" {{ old('region') == 'Norte' ? 'selected' : '' }}>Norte</option>
-                    <option value="Centro" {{ old('region') == 'Centro' ? 'selected' : '' }}>Centro</option>
-                    <option value="Sur" {{ old('region') == 'Sur' ? 'selected' : '' }}>Sur</option>
+                <select name="department" required id="area-select"
+                    onchange="toggleOtro(this.value)"
+                    class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white @error('department') border-red-400 @enderror">
+                    <option value="">Selecciona tu área</option>
+                    <option value="Cardiometabolic marketing" {{ old('department') == 'Cardiometabolic marketing' ? 'selected' : '' }}>Cardiometabolic marketing</option>
+                    <option value="MR-PV" {{ old('department') == 'MR-PV' ? 'selected' : '' }}>MR-PV</option>
+                    <option value="Cardiometabolic sales" {{ old('department') == 'Cardiometabolic sales' ? 'selected' : '' }}>Cardiometabolic sales</option>
+                    <option value="Rare Disease" {{ old('department') == 'Rare Disease' ? 'selected' : '' }}>Rare Disease</option>
+                    <option value="CAS-E" {{ old('department') == 'CAS-E' ? 'selected' : '' }}>CAS-E</option>
+                    <option value="MACO" {{ old('department') == 'MACO' ? 'selected' : '' }}>MACO</option>
+                    <option value="F&O" {{ old('department') == 'F&O' ? 'selected' : '' }}>F&O</option>
+                    <option value="Commercial Excellence and Business Transformation" {{ old('department') == 'Commercial Excellence and Business Transformation' ? 'selected' : '' }}>Commercial Excellence and Business Transformation</option>
+                    <option value="P&O" {{ old('department') == 'P&O' ? 'selected' : '' }}>P&O</option>
+                    <option value="LEC-Q" {{ old('department') == 'LEC-Q' ? 'selected' : '' }}>LEC-Q</option>
+                    <option value="IT Operations" {{ old('department') == 'IT Operations' ? 'selected' : '' }}>IT Operations</option>
+                    <option value="Clinical" {{ old('department') == 'Clinical' ? 'selected' : '' }}>Clinical</option>
+                    <option value="Operations" {{ old('department') == 'Operations' ? 'selected' : '' }}>Operations</option>
+                    <option value="Facilities" {{ old('department') == 'Facilities' ? 'selected' : '' }}>Facilities</option>
+                    <option value="Otro" {{ old('department') == 'Otro' ? 'selected' : '' }}>Otro</option>
                 </select>
-                @error('region')
+                @error('department')
                     <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="mb-4">
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
-                    Número de empleado
-                    <span class="text-gray-400 normal-case font-normal">(opcional)</span>
+            {{-- Otro área --}}
+            <div id="otro-area" class="{{ old('department') == 'Otro' ? '' : 'hidden' }} mb-4">
+                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                    Especifica tu área <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="employee_id" value="{{ old('employee_id') }}"
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition"
-                    placeholder="EMP-00000">
+                <input type="text" name="department_otro" value="{{ old('department_otro') }}"
+                    class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition"
+                    placeholder="Escribe tu área">
             </div>
 
-            {{-- Departamento --}}
-        <div class="mb-4">
-            <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
-                Departamento <span class="text-red-500">*</span>
-            </label>
-            <select name="department" required
-                class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white @error('department') border-red-400 @enderror">
-                <option value="">Selecciona tu departamento</option>
-                <option value="MR-PV" {{ old('department') == 'MR-PV' ? 'selected' : '' }}>MR-PV</option>
-                <option value="Rare Disease" {{ old('department') == 'Rare Disease' ? 'selected' : '' }}>Rare Disease</option>
-                <option value="CAS" {{ old('department') == 'CAS' ? 'selected' : '' }}>CAS</option>
-                <option value="MACO" {{ old('department') == 'MACO' ? 'selected' : '' }}>MACO</option>
-                <option value="F&O" {{ old('department') == 'F&O' ? 'selected' : '' }}>F&O</option>
-                <option value="P&O" {{ old('department') == 'P&O' ? 'selected' : '' }}>P&O</option>
-                <option value="LEC-Q" {{ old('department') == 'LEC-Q' ? 'selected' : '' }}>LEC-Q</option>
-                <option value="IT Operations" {{ old('department') == 'IT Operations' ? 'selected' : '' }}>IT Operations</option>
-                <option value="Clinical Operations" {{ old('department') == 'Clinical Operations' ? 'selected' : '' }}>Clinical Operations</option>
-                <option value="Facilities" {{ old('department') == 'Facilities' ? 'selected' : '' }}>Facilities</option>
-            </select>
-            @error('department')
-                <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
-            @enderror
-        </div>
+            <script>
+            function toggleOtro(value) {
+                const otroDiv = document.getElementById('otro-area');
+                otroDiv.classList.toggle('hidden', value !== 'Otro');
+            }
+            </script>
 
         </div>
 

@@ -31,8 +31,8 @@ class CollaboratorRegistrationController extends Controller
         }
 
         $validated = $request->validate([
-            'name'        => 'required|string|max:255',
-            'email'       => [
+            'name'       => 'required|string|max:255',
+            'email'      => [
                 'required',
                 'email',
                 'unique:collaborators,email',
@@ -43,9 +43,7 @@ class CollaboratorRegistrationController extends Controller
                     }
                 },
             ],
-            'employee_id' => 'nullable|string|max:100',
-            'department'  => 'nullable|string|max:100',
-            'region'      => 'required|string|max:100',
+            'department' => 'required|string|max:255',
         ]);
 
         // Generar iniciales (3 letras: nombre + apellido1 + apellido2)
@@ -55,6 +53,10 @@ class CollaboratorRegistrationController extends Controller
         do {
             $refCode = $initials . '-' . strtoupper(\Illuminate\Support\Str::random(4));
         } while (Collaborator::where('ref_code', $refCode)->exists());
+        
+        $department = $validated['department'] === 'Otro'
+            ? $request->input('department_otro')
+            : $validated['department'];
 
         $collaborator = Collaborator::create([
             'campaign_id' => $campaign->id,
@@ -62,9 +64,7 @@ class CollaboratorRegistrationController extends Controller
             'initials'    => $initials,
             'name'        => $validated['name'],
             'email'       => $validated['email'],
-            'employee_id' => $validated['employee_id'] ?? null,
-            'department' => 'required|string|in:MR-PV,Rare Disease,CAS,MACO,F&O,P&O,LEC-Q,IT Operations,Clinical Operations,Facilities',
-            'region'      => $validated['region'],
+            'department'  => $department,
             'is_active'   => true,
         ]);
 

@@ -58,7 +58,7 @@
         @endif
 
         {{-- Card Stripe --}}
-        <div class="bg-gray-50 rounded-2xl border border-gray-100 p-5">
+        <div class="bg-gray-50 rounded-2xl border mt-4 border-gray-100 p-5">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-8 h-8 bg-white rounded-xl border border-gray-200 flex items-center justify-center flex-shrink-0 shadow-sm">
                     <svg class="w-4 h-4 text-[#635bff]" viewBox="0 0 24 24" fill="currentColor">
