@@ -140,15 +140,15 @@
                     </div>
 
                     {{-- Avatar con iniciales --}}
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0
+                    {{-- <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0
                         {{ $isTop3 ? 'bg-red-500 text-white' : 'bg-red-100 text-red-600' }}">
-                        {{ $collaborator->initials ?? strtoupper(substr($collaborator->name, 0, 3)) }}
-                    </div>
+                        {{ strtoupper(explode('@', $collaborator->email)[0]) }}
+                    </div> --}}
 
                     {{-- Identificador + barra --}}
                     <div class="flex-1 min-w-0">
                         <p class="text-sm font-semibold text-gray-800">
-                            {{ $collaborator->initials ?? strtoupper(substr($collaborator->name, 0, 3)) }}
+                            {{ strtoupper(explode('@', $collaborator->email)[0]) }}
                         </p>
                         <div class="flex items-center gap-2 mt-1">
                             <div class="flex-1 bg-gray-200 rounded-full h-1.5 overflow-hidden">
