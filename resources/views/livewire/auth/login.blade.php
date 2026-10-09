@@ -81,7 +81,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form wire:submit="login" method="POST" action="{{ route('login') }}" class="flex flex-col gap-4">
+    <form wire:submit="login" method="POST" class="flex flex-col gap-4">
         @csrf
 
         <div>
