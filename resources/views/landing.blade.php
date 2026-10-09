@@ -137,13 +137,13 @@
         </div>
         @endif
 
-        <a href="{{ url('/donar') }}"
+        {{-- <a href="{{ url('/donar') }}"
             class="bg-sitalel inline-flex items-center gap-3 text-white font-bold rounded-2xl px-8 py-4 text-base transition shadow-lg hover:shadow-xl">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
             DONA AHORA →
-        </a>
+        </a> --}}
 
     </div>
 </section>  
@@ -401,7 +401,7 @@
     </section>
 
     {{-- CTA FINAL --}}
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    {{-- <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="bg-white rounded-3xl border border-orange-100 shadow-sm p-8">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-4">
@@ -421,7 +421,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- INSTRUCTIVO DONANTES --}}
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
