@@ -234,6 +234,168 @@
         </div>
     </section>
 
+    {{-- TIMELINE SITALEL --}}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <div class="text-center mb-10">
+            <p class="text-xs font-semibold text-orange-500 uppercase tracking-widest mb-2">Nuestro camino</p>
+            <h2 class="text-2xl font-black text-gray-800">
+                De una idea a un <span class="text-sitalel">modelo replicable</span>
+            </h2>
+            <p class="text-sm text-gray-500 mt-2">Impact Days es parte de un proyecto de 3 años con Cruz Roja Mexicana y Novo Nordisk</p>
+        </div>
+
+        <div class="relative">
+
+            {{-- Línea vertical --}}
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 hidden sm:block"></div>
+
+            <div class="space-y-6">
+
+                {{-- Hito 1 - Completado --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md z-10">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 flex-1">
+                        <p class="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">2024</p>
+                        <h3 class="font-bold text-gray-800 mb-1">Nace LEKIL CUXLEJAL — Vida Saludable</h3>
+                        <p class="text-xs text-gray-500">Inicio del proyecto en Cruz Roja Mexicana, Delegación San Cristóbal. Primeros acercamientos con Novo Nordisk México.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 2 - Completado --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md z-10">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 flex-1">
+                        <p class="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">Junio — Julio 2025</p>
+                        <h3 class="font-bold text-gray-800 mb-1">Formalización de la colaboración con Novo Nordisk</h3>
+                        <p class="text-xs text-gray-500">Se firma el convenio de colaboración por 3 años (sept. 2025 — sept. 2028). El proyecto evoluciona a <strong>SITALEL — Salud Comunitaria para una Vida Saludable</strong>.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 3 - Completado --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md z-10">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 flex-1">
+                        <p class="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">Septiembre — Octubre 2025</p>
+                        <h3 class="font-bold text-gray-800 mb-1">Primera brigada en Navenchauc</h3>
+                        <p class="text-xs text-gray-500">Arranque de operaciones el 28 de octubre de 2025. Primera intervención comunitaria tras visitas domiciliarias, reuniones con autoridades e investigación de necesidades locales.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 4 - Completado --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md z-10">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 p-5 flex-1">
+                        <p class="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">Al 30 de septiembre de 2026</p>
+                        <h3 class="font-bold text-gray-800 mb-2">Resultados acumulados SITALEL</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            @foreach([
+                                ['num' => '2,898', 'label' => 'Personas atendidas'],
+                                ['num' => '11,243', 'label' => 'Consultas y seguimientos'],
+                                ['num' => '122', 'label' => 'Brigadas realizadas'],
+                                ['num' => '14', 'label' => 'Localidades'],
+                                ['num' => '3', 'label' => 'Municipios'],
+                                ['num' => '1,200', 'label' => 'Niñas y niños en talleres'],
+                            ] as $stat)
+                            <div class="bg-red-50 rounded-xl p-3 text-center">
+                                <p class="text-lg font-black text-red-600">{{ $stat['num'] }}</p>
+                                <p class="text-xs text-gray-500 leading-tight">{{ $stat['label'] }}</p>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Hito 5 - HOY --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#F97316] flex items-center justify-center shadow-md z-10 animate-pulse">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-orange-50 rounded-2xl border-2 border-orange-200 p-5 flex-1">
+                        <p class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-1">19 — 20 Octubre 2026 · AHORA</p>
+                        <h3 class="font-bold text-gray-800 mb-1">Impact Days 2026 — Take Action</h3>
+                        <p class="text-xs text-gray-600">Colaboradores de Novo Nordisk México se unen como agentes de cambio para recaudar donativos destinados a fortalecer SITALEL y expandir su impacto.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 6 - Futuro --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shadow-sm z-10">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-200 p-5 flex-1 opacity-60">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Noviembre 2026</p>
+                        <h3 class="font-bold text-gray-500 mb-1">Nuevo módulo de Odontología</h3>
+                        <p class="text-xs text-gray-400">Implementación de servicios odontológicos para todos los pacientes de SITALEL: equipo, odontólogos, servicios sociales y logística.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 7 - Futuro --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shadow-sm z-10">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-200 p-5 flex-1 opacity-60">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Noviembre 2026 en adelante</p>
+                        <h3 class="font-bold text-gray-500 mb-1">Ampliación de servicios de laboratorio</h3>
+                        <p class="text-xs text-gray-400">PSA para hombres, perfil de lípidos y estudios específicos de seguimiento, con el laboratorio de Cruz Roja en cada brigada.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 8 - Futuro --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shadow-sm z-10">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-200 p-5 flex-1 opacity-60">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">2027</p>
+                        <h3 class="font-bold text-gray-500 mb-1">Expansión a nuevos municipios</h3>
+                        <p class="text-xs text-gray-400">Crecimiento a dos nuevos municipios de intervención y más localidades en los municipios actuales. Fortalecimiento de talleres de prevención en escuelas primarias.</p>
+                    </div>
+                </div>
+
+                {{-- Hito 9 - Futuro --}}
+                <div class="flex gap-5 items-start">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shadow-sm z-10">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-200 p-5 flex-1 opacity-60">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Septiembre 2028</p>
+                        <h3 class="font-bold text-gray-500 mb-1">Modelo replicable y sostenible</h3>
+                        <p class="text-xs text-gray-400">Cierre del convenio de 3 años con Novo Nordisk México. SITALEL consolidado como modelo de salud comunitaria replicable en otras delegaciones de Cruz Roja Mexicana.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     {{-- CTA FINAL --}}
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="bg-white rounded-3xl border border-orange-100 shadow-sm p-8">
