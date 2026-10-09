@@ -39,6 +39,10 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
             box-shadow: 0 2px 20px rgba(0,0,0,0.06) !important;
         }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body class="grid-bg min-h-screen">
@@ -324,7 +328,7 @@
 
                 {{-- Hito 5 - HOY --}}
                 <div class="flex gap-5 items-start">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#F97316] flex items-center justify-center shadow-md z-10 animate-pulse">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center shadow-md z-10" style="background-color: #F97316; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 9999px;">
                         <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                         </svg>
