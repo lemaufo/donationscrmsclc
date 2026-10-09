@@ -75,17 +75,19 @@
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
     <div class="flex flex-col items-center text-center">
 
-        <div class="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-5">
+        <div class="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-2">
             <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
             <span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Campaña activa</span>
         </div>
 
-        <h1 class="text-5xl sm:text-6xl font-black text-[#1e3a8a] leading-none mb-2">
+        {{-- <h1 class="text-5xl sm:text-6xl font-black text-[#1e3a8a] leading-none mb-2">
             Impact Days
         </h1>
         <h2 class="text-5xl sm:text-6xl font-black text-sitalel italic leading-none mb-6">
             2026
-        </h2>
+        </h2> --}}
+
+        <img src="{{ asset('images/impact_days.png') }}" alt="Impact Days 2026" class="h-48 object-contain mb-6">
 
         <p class="text-gray-600 text-lg mb-6 leading-relaxed max-w-2xl">
             Unidos por Chiapas. Colaboradores de
