@@ -87,7 +87,8 @@
             2026
         </h2> --}}
 
-        <img src="{{ asset('images/impact_days.png') }}" alt="Impact Days 2026" class="h-48 object-contain mb-6">
+        <img src="{{ asset('images/impact_days.png') }}" alt="Impact Days 2026" 
+    style="height: 12rem; object-fit: contain; margin-bottom: 1.5rem;">
 
         <p class="text-gray-600 text-lg mb-6 leading-relaxed max-w-2xl">
             Unidos por Chiapas. Colaboradores de
