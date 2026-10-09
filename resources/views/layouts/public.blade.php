@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logocrm.ico') }}">
-    <title>@yield('title', 'Impact Day — Cruz Roja México')</title>
+    <title>@yield('title', 'Impact Days — Cruz Roja México')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @stack('styles')
@@ -54,6 +54,6 @@
         </svg>
         <span class="text-sm font-semibold">¿Necesitas ayuda?</span>
     </a>
-        
+
 </body>
 </html>

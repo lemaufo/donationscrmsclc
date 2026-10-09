@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Confirmar donativo — Impact Day')
+@section('title', 'Confirmar donativo — Impact Days')
 @section('content_width', 'max-w-6xl mx-auto')
 
 @section('content')

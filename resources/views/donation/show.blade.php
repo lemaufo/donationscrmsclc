@@ -14,7 +14,7 @@
                 @if(isset($campaign) && $campaign->logo_url)
                     <img src="{{ Storage::url($campaign->logo_url) }}" alt="Cruz Roja" class="h-12 object-contain mb-4">
                 @endif
-                <h2 class="text-2xl font-black text-[#1e3a8a] mb-2">Impact Day 2026</h2>
+                <h2 class="text-2xl font-black text-[#1e3a8a] mb-2">Impact Days 2026</h2>
                 <p class="text-gray-500 text-sm leading-relaxed">
                     Una iniciativa de Cruz Roja Mexicana y Novo Nordisk para recaudar donativos destinados a comunidades vulnerables de San Cristóbal de Las Casas, Chiapas.
                 </p>

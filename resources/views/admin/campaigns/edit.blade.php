@@ -76,7 +76,7 @@
                 </label>
                 <textarea name="welcome_message" rows="2"
                     class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition resize-none"
-                    placeholder="Bienvenido a Impact Day 2026...">{{ old('welcome_message', $campaign->welcome_message) }}</textarea>
+                    placeholder="Bienvenido a Impact Days 2026...">{{ old('welcome_message', $campaign->welcome_message) }}</textarea>
             </div>
         </div>
 

@@ -9,7 +9,7 @@
         @if($campaign->welcome_message)
             <p class="text-xs text-gray-400 italic mb-3">"{{ $campaign->welcome_message }}"</p>
         @endif
-        <h1 class="text-2xl font-bold text-[#1e3a8a]">Únete a Impact Day</h1>
+        <h1 class="text-2xl font-bold text-[#1e3a8a]">Únete a Impact Days</h1>
         <p class="text-gray-500 text-sm mt-1">Obtén tu link personal de donaciones en segundos</p>
     </div>
 

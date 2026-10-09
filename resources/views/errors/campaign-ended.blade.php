@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Campaña finalizada — Impact Day')
+@section('title', 'Campaña finalizada — Impact Days')
 
 @section('content')
 <div class="max-w-lg mx-auto text-center">
@@ -12,7 +12,7 @@
         </div>
         <h1 class="text-xl font-bold text-gray-800 mb-2">Campaña finalizada</h1>
         <p class="text-gray-500 text-sm mb-4">
-            La campaña Impact Day 2026 concluyó el
+            La campaña Impact Days 2026 concluyó el
             <strong class="text-gray-700">{{ $ends_at->format('d \d\e F \d\e Y') }}</strong>.
         </p>
         <p class="text-gray-400 text-sm mb-6">

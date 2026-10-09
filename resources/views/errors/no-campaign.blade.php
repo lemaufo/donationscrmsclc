@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Próximamente — Impact Day')
+@section('title', 'Próximamente — Impact Days')
 
 @section('content')
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center">

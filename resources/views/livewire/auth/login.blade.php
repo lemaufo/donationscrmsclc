@@ -76,7 +76,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
     <div class="text-center">
         <h1 class="text-lg font-bold text-[#1e3a8a]">Inicio de sesión</h1>
-        <p class="text-sm text-gray-500 mt-0.5">Impact Day 2026 · Cruz Roja Mexicana</p>
+        <p class="text-sm text-gray-500 mt-0.5">Impact Days 2026 · Cruz Roja Mexicana</p>
     </div>
 
     <x-auth-session-status class="text-center" :status="session('status')" />

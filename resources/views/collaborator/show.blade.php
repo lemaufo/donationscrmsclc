@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Mi impacto — Impact Day')
+@section('title', 'Mi impacto — Impact Days')
 @section('content_width', 'max-w-3xl mx-auto')
 
 @section('header_right')

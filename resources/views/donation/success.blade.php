@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', '¡Gracias! — Impact Day')
+@section('title', '¡Gracias! — Impact Days')
 @section('content_width', 'max-w-6xl mx-auto')
 
 @section('content')
@@ -60,7 +60,7 @@
             <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">Comparte e invita a más personas</p>
             <p class="text-sm text-gray-500 mb-4">Tu impacto crece cuando invitas a más personas a donar. Comparte tu link y ayuda a Cruz Roja Mexicana a llegar a más familias.</p>
 
-            <a href="https://wa.me/?text={{ urlencode('¡Acabo de donar $' . number_format($donation->amount, 0) . ' MXN a Cruz Roja Mexicana en Chiapas! Únete al Impact Day y haz tu donativo aquí: ' . url('/donar') . '?ref=' . $donation->collaborator->ref_code) }}"
+            <a href="https://wa.me/?text={{ urlencode('¡Acabo de donar $' . number_format($donation->amount, 0) . ' MXN a Cruz Roja Mexicana en Chiapas! Únete a Impact Days y haz tu donativo aquí: ' . url('/donar') . '?ref=' . $donation->collaborator->ref_code) }}"
                 target="_blank"
                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold rounded-2xl py-4 flex items-center justify-center gap-2 transition shadow-sm mb-3">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

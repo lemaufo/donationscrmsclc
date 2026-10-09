@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Próximamente — Impact Day')
+@section('title', 'Próximamente — Impact Days')
 
 @section('content')
 <div class="max-w-lg mx-auto text-center">

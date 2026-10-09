@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Admin — Impact Day')
+@section('title', 'Admin — Impact Days')
 @section('content_width', 'max-w-6xl mx-auto')
 @section('header_width', 'max-w-6xl mx-auto')
 
