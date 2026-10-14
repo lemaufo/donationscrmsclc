@@ -55,8 +55,8 @@
                     <td class="px-5 py-3 text-sm text-gray-500">{{ $user->email }}</td>
                     <td class="px-5 py-3">
                         <span class="text-xs px-2 py-1 rounded-full font-medium
-                            {{ $user->role === 'superadmin' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700' }}">
-                            {{ $user->role === 'superadmin' ? 'Superadmin' : 'Admin Cruz Roja' }}
+                            {{ $user->role === 'superadmin' ? 'bg-purple-100 text-purple-700' : ($user->role === 'viewer' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700') }}
+                            {{ $user->role === 'superadmin' ? 'Superadmin' : ($user->role === 'viewer' ? 'Viewer' : 'Admin Cruz Roja') }}
                         </span>
                     </td>
                     @if(auth()->user()->isSuperAdmin())

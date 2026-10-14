@@ -63,6 +63,7 @@
                 <select name="role"
                     class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-red-400 transition bg-white">
                     <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin Cruz Roja</option>
+                    <option value="viewer" {{ old('role') == 'viewer' ? 'selected' : '' }}>Viewer</option>
                     <option value="superadmin" {{ old('role') == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
                 </select>
             </div>

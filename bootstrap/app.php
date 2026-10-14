@@ -14,6 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens(except: [
             'stripe/webhook',
         ]);
+        $middleware->alias([
+            'require.admin'      => \App\Http\Middleware\RequireAdmin::class,
+            'require.non.viewer' => \App\Http\Middleware\RequireNonViewer::class,
+            'require.campaign'   => \App\Http\Middleware\RequireActiveCampaign::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
