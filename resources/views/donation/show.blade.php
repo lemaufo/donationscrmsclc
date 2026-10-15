@@ -251,7 +251,7 @@
                         <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <p class="text-xs text-amber-700">El CFDI es emitido por Cruz Roja Mexicana. Tus datos se envían al área de facturación para su procesamiento posterior. El comprobante fiscal será enviado a tu correo en un lapso estimado de <strong>3 días hábiles</strong> a partir de la fecha del donativo.</p>
+                        <p class="text-xs text-amber-700">El CFDI es emitido por Cruz Roja Mexicana. Tus datos se envían al área de facturación para su procesamiento posterior. El comprobante fiscal será enviado a tu correo en un lapso estimado de <strong>5 días hábiles</strong> a partir de la fecha del donativo.</p>
                     </div>
                 </div>
             </div>
