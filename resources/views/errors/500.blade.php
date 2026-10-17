@@ -18,7 +18,7 @@
                 class="inline-block bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-xl transition text-sm">
                 Ir al inicio →
             </a>
-            <a href="https://wa.me/5219618920410?text=Hola,%20tuve%20un%20error%20en%20la%20plataforma%20Impact%20Days."
+            <a href="https://wa.me/5219671020760?text=Hola,%20tuve%20un%20error%20en%20la%20plataforma%20Impact%20Days."
                 target="_blank"
                 class="inline-block border border-green-200 text-green-600 hover:bg-green-50 font-medium px-6 py-3 rounded-xl transition text-sm">
                 Reportar error

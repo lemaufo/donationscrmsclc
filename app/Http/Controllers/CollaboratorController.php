@@ -8,6 +8,8 @@ use Illuminate\View\View;
 
 class CollaboratorController extends Controller
 {
+
+    
     public function show(string $ref_code): View
     {
         $collaborator = Collaborator::where('ref_code', $ref_code)

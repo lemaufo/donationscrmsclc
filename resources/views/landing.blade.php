@@ -677,7 +677,7 @@
 </script>
 
     {{-- Botón flotante WhatsApp --}}
-    <a href="https://wa.me/5219618920410?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20plataforma%20Impact%20Days%20de%20Cruz%20Roja%20Mexicana."
+    <a href="https://wa.me/5219671020760?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20plataforma%20Impact%20Days%20de%20Cruz%20Roja%20Mexicana."
         target="_blank"
         class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 group"
         style="position: fixed; bottom: 24px; right: 24px; z-index: 99999; padding: 14px 20px 14px 16px;">
