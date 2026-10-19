@@ -37,6 +37,7 @@ class DonationController extends Controller
         'donor_name'      => 'required|string|max:255',
         'donor_email'     => 'nullable|email|max:255',
         'donor_rfc'       => 'nullable|string|max:13',
+        'wants_invoice'   => 'nullable|boolean',
     ], [
         'amount.required'     => 'El monto es obligatorio.',
         'amount.numeric'      => 'El monto debe ser un número válido.',
@@ -78,6 +79,7 @@ class DonationController extends Controller
         'donor_name'      => $validated['donor_name'],
         'donor_email'     => $validated['donor_email'] ?? null,
         'donor_rfc'       => strtoupper($validated['donor_rfc'] ?? ''),
+        'wants_invoice'   => !empty($validated['donor_rfc']),
     ]);
 
     $intent   = $this->stripeService->createPaymentIntent($donation);
