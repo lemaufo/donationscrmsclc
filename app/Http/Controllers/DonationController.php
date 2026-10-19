@@ -29,8 +29,8 @@ class DonationController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $validated = $request->validate([
+{
+    $validated = $request->validate([
         'amount'          => 'required|numeric|min:50|max:100000',
         'collaborator_id' => 'nullable|exists:collaborators,id',
         'campaign_id'     => 'required|exists:campaigns,id',
@@ -38,6 +38,12 @@ class DonationController extends Controller
         'donor_email'     => 'nullable|email|max:255',
         'donor_rfc'       => 'nullable|string|max:13',
         'wants_invoice'   => 'nullable|boolean',
+        'person_type'     => 'nullable|in:fisica,moral',
+        'razon_social'    => 'nullable|string|max:255',
+        'regimen_fiscal'  => 'nullable|string|max:10',
+        'uso_cfdi'        => 'nullable|string|max:10',
+        'codigo_postal'   => 'nullable|string|max:5',
+        'fiscal_email'    => 'nullable|email|max:255',
     ], [
         'amount.required'     => 'El monto es obligatorio.',
         'amount.numeric'      => 'El monto debe ser un número válido.',
@@ -70,6 +76,8 @@ class DonationController extends Controller
         ]);
     }
 
+    $wantsInvoice = $request->boolean('wants_invoice');
+
     $donation = \App\Models\Donation::create([
         'campaign_id'     => $validated['campaign_id'],
         'collaborator_id' => $validated['collaborator_id'] ?? null,
@@ -79,7 +87,13 @@ class DonationController extends Controller
         'donor_name'      => $validated['donor_name'],
         'donor_email'     => $validated['donor_email'] ?? null,
         'donor_rfc'       => strtoupper($validated['donor_rfc'] ?? ''),
-        'wants_invoice'   => !empty($validated['donor_rfc']),
+        'wants_invoice'   => $wantsInvoice,
+        'person_type'     => $wantsInvoice ? ($validated['person_type'] ?? null) : null,
+        'razon_social'    => $wantsInvoice ? ($validated['razon_social'] ?? null) : null,
+        'regimen_fiscal'  => $wantsInvoice ? ($validated['regimen_fiscal'] ?? null) : null,
+        'uso_cfdi'        => $wantsInvoice ? ($validated['uso_cfdi'] ?? null) : null,
+        'codigo_postal'   => $wantsInvoice ? ($validated['codigo_postal'] ?? null) : null,
+        'fiscal_email'    => $wantsInvoice ? ($validated['fiscal_email'] ?? null) : null,
     ]);
 
     $intent   = $this->stripeService->createPaymentIntent($donation);
