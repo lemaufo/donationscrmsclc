@@ -164,7 +164,7 @@
         <div class="bg-gray-50 rounded-2xl border border-gray-100 p-5 text-center">
             <p class="text-xs text-gray-400">
                 ¿Necesitas tu comprobante fiscal? El CFDI será emitido por Cruz Roja Mexicana.<br>
-                Contacta a <a href="mailto:crmsancristobal@gmail.com" class="text-red-600 hover:underline">crmsancristobal@gmail.com</a>
+                Contacta a <a href="mailto:adelacruz.chis@cruzrojamexicana.org.mx" class="text-red-600 hover:underline">adelacruz.chis@cruzrojamexicana.org.mx</a>
             </p>
         </div>
 

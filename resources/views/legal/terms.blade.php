@@ -124,7 +124,7 @@
                         <svg class="w-3.5 h-3.5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
-                        <a href="mailto:crmsancristobal@gmail.com" class="text-red-600 hover:underline">crmsancristobal@gmail.com</a>
+                        <a href="mailto:adelacruz.chis@cruzrojamexicana.org.mx" class="text-red-600 hover:underline">adelacruz.chis@cruzrojamexicana.org.mx</a>
                     </p>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                 </div>
                 <h2 class="text-base font-bold text-[#1e3a8a]">Notificaciones y contacto</h2>
             </div>
-            <p class="pl-11 text-sm text-gray-600">Para cualquier comunicación relacionada con estos Términos (incluidas notificaciones legales), utilice el correo <a href="mailto:crmsancristobal@gmail.com" class="text-red-600 hover:underline font-medium">crmsancristobal@gmail.com</a>, dirigido a Cruz Roja Mexicana, Delegación San Cristóbal.</p>
+            <p class="pl-11 text-sm text-gray-600">Para cualquier comunicación relacionada con estos Términos (incluidas notificaciones legales), utilice el correo <a href="mailto:adelacruz.chis@cruzrojamexicana.org.mx" class="text-red-600 hover:underline font-medium">adelacruz.chis@cruzrojamexicana.org.mx</a>, dirigido a Cruz Roja Mexicana, Delegación San Cristóbal.</p>
         </div>
 
     </div>
