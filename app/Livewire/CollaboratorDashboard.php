@@ -22,28 +22,34 @@ class CollaboratorDashboard extends Component
 
     public function loadData(): void
     {
-        $donations = Donation::where('collaborator_id', $this->collaborator->id)
+        // Query completo para totales (sin take)
+        $allDonations = Donation::where('collaborator_id', $this->collaborator->id)
+            ->where('status', 'paid')
+            ->get();
+
+        $this->totalRaised   = (float) $allDonations->sum('amount');
+        $this->donationCount = $allDonations->count();
+
+        // Solo las últimas 10 para mostrar en la lista
+        $this->recentDonations = Donation::where('collaborator_id', $this->collaborator->id)
             ->where('status', 'paid')
             ->latest('paid_at')
             ->take(10)
-            ->get();
+            ->get()
+            ->map(fn($d) => [
+                'amount'     => $d->amount,
+                'donor_name' => $d->donor_name ?? 'Anónimo',
+                'paid_at'    => $d->paid_at?->diffForHumans(),
+            ])->toArray();
 
-        $this->totalRaised    = (float) $donations->sum('amount');
-        $this->donationCount  = $donations->count();
-        $this->recentDonations = $donations->map(fn($d) => [
-            'amount'     => $d->amount,
-            'donor_name' => $d->donor_name ?? 'Anónimo',
-            'paid_at'    => $d->paid_at?->diffForHumans(),
-        ])->toArray();
-
-        // Calcular posición en el ranking
+        // Ranking (sin cambios)
         $this->ranking = \App\Models\Collaborator::where('campaign_id', $this->collaborator->campaign_id)
             ->where('is_active', true)
             ->withSum(['donations as total_raised' => fn($q) => $q->where('status', 'paid')], 'amount')
             ->orderByDesc('total_raised')
             ->get()
             ->search(fn($c) => $c->id === $this->collaborator->id) + 1;
-        }
+    }
 
     public function render()
     {
